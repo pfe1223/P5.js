@@ -1,0 +1,6 @@
+{
+    "<start>": [ "<subject>", "<object>", "<verb>" ],
+    "<subject>": [ "I", "We", "They" ],
+    "<verb>": [ "like", "dislike", "love"],
+    "<object>": [ "puppies.", "kittens.", "butterflies."]
+  }

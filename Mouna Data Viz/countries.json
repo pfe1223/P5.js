@@ -1,0 +1,27 @@
+{
+	"countries": [{
+			"name": "France",
+			"x": 549,
+			"y": 207,
+			"executions": 17
+		},
+		{
+			"name": "America",
+			"x": 215,
+			"y": 234,
+			"executions": 67
+		},
+		{
+			"name": "England",
+			"x": 530,
+			"y": 181,
+			"executions": 27
+		},
+		{
+			"name": "China",
+			"x": 821,
+			"y": 254,
+			"executions": 37
+		}
+	]
+}

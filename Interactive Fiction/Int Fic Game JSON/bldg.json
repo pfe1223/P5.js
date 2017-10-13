@@ -1,0 +1,29 @@
+{
+	"rooms": [{
+			"name": "foyer",
+      "start": true,
+			"description": "The foyer is a cavernous space with a large chandelier hanging above.",
+      "north": false,
+      "east": false,
+      "south": false,
+      "west": "library",
+      "objects": [{"name": "desk",
+                    "description": "Along the wall is a long, skinny, oak desk. The desk has a drawer."},
+                  {"name": "letters",
+                    "description": "On top of the desk are a pile of letters. Looks like it's mostly junk mail."}],
+      "end": false
+		},
+		{
+			"name": "library",
+      "start": false,
+			"description": "The room is filled floor to ceiling with stacks of old, musty books.",
+      "north": false,
+      "east": "foyer",
+      "south": false,
+      "west": false,
+      "objects": [{"name": "chair",
+                  "description": "There is a high-backed leather chair in the corner."}],
+      "end": false
+		}
+	]
+}
