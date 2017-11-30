@@ -30,6 +30,39 @@ function ledOff() {
 
 function readyMsg() {
   console.log("Board ready!");
+  changeMood("okay");
+}
+
+function changeMood(mood) {
+  let light1 = new five.Led.RGB({
+    pins: {
+      red: 6,
+      green: 5,
+      blue: 3
+    },
+    isAnode: true
+  });
+
+  let light2 = new five.Led.RGB({
+    pins: {
+      red: 11,
+      green: 10,
+      blue: 9
+    },
+    isAnode: true
+  });
+
+  if (mood === "okay") {
+    light1.on();
+    light1.color("Black");
+    light2.on();
+    light2.color("Black");
+  } else if (mood === "annoyed") {
+    light1.on();
+    light1.color("Olive");
+    light2.on();
+    light2.color("Olive");
+  }
 }
 
 //Twitter Code
@@ -60,19 +93,21 @@ function tweetEvent(eventMsg) {
   let text = eventMsg.text;
   let from = eventMsg.user.screen_name;
 
-  console.log(replyto + ' ' + from);
+  console.log('To: ' + replyto + 'From: ' + from + ' - ' + text);
 
   if (replyto === 'FaisBot') {
     let hasHashTag = eventMsg.entities.hashtags;
     if (hasHashTag) {
-      console.log("There is a hastag");
+      console.log("There is a hashtag");
       let hashTag = eventMsg.entities.hashtags[0].text;
-      if (hashTag === 'on') {
-        console.log('Turn LED on');
-        ledOn();
-      } else if (hashTag === 'off') {
-        console.log('Turn LED off');
-        ledOff();
+      if (hashTag === 'okay') {
+        console.log('I am okay');
+        changeMood("okay");
+      } else if (hashTag === 'annoyed') {
+        console.log('I am annoyed');
+        changeMood("annoyed");
+      } else {
+        console.log("Don't recognize the mood: " + hashTag);
       }
     } else {
       console.log("No hashtag");
