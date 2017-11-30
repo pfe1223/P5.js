@@ -60,5 +60,6 @@ function partWithoutEqual(parts) {
 }
 
 function getResult(expr) {
-  return int(expr[expr.length - 1]);
+  let parts = expr.split('=');
+  return int(parts[parts.length - 1]);
 }
