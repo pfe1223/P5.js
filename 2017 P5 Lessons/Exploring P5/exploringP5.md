@@ -1,10 +1,43 @@
 #<a name="home"></a>Exploring P5
-Now that you have learned some of the basics, it is time to explore the different kinds of things you can do in P5. Select two different videos, each from a different category, and follow along. Each project will be done with the Atom text editor and Firefox. You will be turning in a working program for each video you watch as well as a reflection.
+Now that you have learned some of the basics, it is time to explore the different kinds of things you can do in P5. Select two different videos, each from a different category, and follow along. Each project will be done with the editor of your choice (Atom, Brackets, etc.). You will embed your programs on a wikiproject.
 
+* [Submit Your Work](#submit)
 * [Art/Visual](#art)
 * [Games](#games)
 * [Text/Words](#text)
 * [Sound](#sound)
+* [Bots](#bots)
+* [Video](#video)
+
+##<a name="submit"></a>Submit Your Work
+
+Before you hand in your work, you need to find the project folder for your program. For the purpose of this example, I will be using a project folder called `buttonDemo`.
+
+![Project Folder](images/Project-Folder.png)
+
+Right-click (or Control + click on a Mac) to bring up the menu. Select `Compress` from the list. On Windows, select, `zip`.
+
+![Right-Click](images/Right-Click.png)
+
+You should now see a zipped folder in Finder or Windows Explorer.
+
+![Zipped Folder](images/Zipped-Folder.png)
+
+Now, go to the class Haiku page and open the Wiki Project entitled `Exploring P5`. Add a content block, and select `MiniSites` as the type.
+
+![MiniSite](images/MiniSite.png) 
+
+Click on the `Choose file` button and find the zipped folder on your computer. Click `Okay` and then upload the zipped folder to Haiku.
+
+![Zipped Folder](images/Zipped-Folder.png)
+
+Enter your name and a title for your project. You can add a description if you want. Be sure you select the option to embed your project into the content block.
+
+![Block Info](images/Block-Info.png)
+
+Save your work. It will take a few moments for your project to load. You can click the `Refresh` button to force your project to load. The canvas should appear and your project should start working. If you do not see all of your project, edit the content block and change the `Frame height` to match the height of your canvas in the `sketch.js` file.
+
+[_Up_](#home)
 
 ##<a name="art"></a>Art/Visual
 
@@ -122,3 +155,50 @@ If you watched the "Loading/Playing Sound" video, watch this one as well.
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/2O3nm0Nvbi4?list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
 [_Up_](#home)
+
+##<a name="bots"></a>Bots
+
+###Chatbot
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wf8w1BJb9Xc" frameborder="0" allowfullscreen></iframe>
+
+[_Up_](#home)
+
+###Text to Speech
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v0CHV33wDsI" frameborder="0" allowfullscreen></iframe>
+
+[_Up_](#home)
+
+###Speech Recognition
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q_bXBcmfTJM" frameborder="0" allowfullscreen></iframe>
+
+[_Up_](#home)
+
+###Voice Chatbot
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iFTgphKCP9U" frameborder="0" allowfullscreen></iframe>
+
+[_Up_](#home)
+
+##<a name="video"></a>Video
+
+###Brightness Mirror
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rNqaw8LT2ZU" frameborder="0" allowfullscreen></iframe>
+
+[_Up_](#home)
+
+###Checkbox Mirror
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m1G6WBvrOBE" frameborder="0" allowfullscreen></iframe>
+
+[_Up_](#home)
+
+###Painting with Pixels
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0V3uYA1hafk" frameborder="0" allowfullscreen></iframe>
+
+[_Up_](#home)
+
+###Video Effects
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jdKep6jo7b0" frameborder="0" allowfullscreen></iframe>
+
+[_Up_](#home)
+
+###"Instagram Filters"
+Read the following [article](https://medium.com/@kellylougheed/instagram-filters-with-javascript-p5-js-83f28c9f7fda) to learn how to add filters to video captured by your webcam. Note: there is no video attached to this example.
