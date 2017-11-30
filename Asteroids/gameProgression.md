@@ -1,4 +1,13 @@
 #Asteroids
+## Setting Up Your Workflow
+* Go to the `Self-Service` section and be sure to download the Atom editor
+* Restart you computer if Atom won't install
+* Open Atom, go to the preferences
+* Click on `Install`
+* Search for and install `atom-live-server` and `atom beautify`
+* Download the video game folder from the Haiku page
+* Load this folder into the Atom editor
+
 ##Unit 1 - P5.js
 ###P5.js Basics
 * Each program has two required functions, `setup()` and `draw()`.
@@ -111,15 +120,15 @@ function draw(){
 
 ### Variables
 * Think of variables as containers. They hold a value. That value can change.
-* Create a variable with the `var` command.
+* Create a variable with the `let` command.
 * Variables are created before the `setup()` function.
 * The code below creates a variable `x` with the value of 400 and a `y` variable with the value of 300.
 * These variables are used in place of the number when the ellipse is drawn.
 * The ellipse did not change position.
 
 ~~~
-var x = 400;
-var y = 300;
+let x = 400;
+let y = 300;
 
 function setup(){
 	createCanvas(800, 600);
@@ -142,8 +151,8 @@ function draw(){
 * The code below animates the ellipse, moving from left to right.
 
 ~~~
-var x = 400;
-var y = 300;
+let x = 400;
+let y = 300;
 
 function setup(){
 	createCanvas(800, 600);
@@ -165,8 +174,8 @@ function draw(){
 * Instead, increment the `y` variable.
 
 ~~~
-var x = 400;
-var y = 300;
+let x = 400;
+let y = 300;
 
 function setup(){
 	createCanvas(800, 600);
@@ -188,8 +197,8 @@ function draw(){
 * Instead, subtract 1 from the variables.
 
 ~~~
-var x = 400;
-var y = 300;
+let x = 400;
+let y = 300;
 
 function setup(){
 	createCanvas(800, 600);
@@ -218,8 +227,8 @@ function draw(){
 * If this is false, keep moving until `x` is off the screen.
 
 ~~~
-var x = 400;
-var y = 300;
+let x = 400;
+let y = 300;
 
 function setup(){
 	createCanvas(800, 600);
@@ -244,8 +253,8 @@ function draw(){
 * If you are animating from top to bottom, replace `x` with `y` and `width` with `height`.
 
 ~~~
-var x = 400;
-var y = 300;
+let x = 400;
+let y = 300;
 
 function setup(){
 	createCanvas(800, 600);
@@ -273,13 +282,13 @@ function draw(){
 * This for-loop is in `setup()` and prints the number of each loop.
 
 ~~~
-var x = 400;
-var y = 300;
+let x = 400;
+let y = 300;
 
 function setup(){
 	createCanvas(800, 600);
 	
-	for(var i = 0; i < 10; i++){
+	for(let i = 0; i < 10; i++){
 		print(i);
 	}
 }
@@ -294,26 +303,27 @@ function draw(){
 }
 ~~~
 
+* You won't see anything at first, open the JS console to see the output.
 * Notice that the loop starts counting with 0.
 * It runs 10 times and then stops because when `i` is equal to 10, the conditional fails; 10 is not less than 10.
 
 ###Ararys
 * Arrays are like a list of variables.
 * You can store lots of information about related objects with an array.
-* The code `var arr = [];` creates an array named "arr". 
+* The code `let arr = [];` creates an array named "arr". 
 * "arr" is an empty array; there is nothing in it.
 * To fill an array, you need to use a for-loop.
 * The code below creates an array named "arr", uses a for-loop to fill the array with 10 randomly chosen numbers between 1 and 5, and then prints the array when the for-loop is done.
 
 ~~~
-var x = 400;
-var y = 300;
-var arr = [];
+let x = 400;
+let y = 300;
+let arr = [];
 
 function setup(){
 	createCanvas(800, 600);
 	
-	for(var i = 0; i < 10; i++){
+	for(let i = 0; i < 10; i++){
 		arr[i] = random(1, 5);
 	}
 	
@@ -365,7 +375,7 @@ function draw(){
 
 ###Loading the Ship Image
 * The standard sprite is a square. We want to replace this with an image of a spaceship.
-* Create a `var` named ship above `setup()`.
+* Create a `let` named ship above `setup()`.
 * Set the value of `ship` to the created sprite.
 * We are also going to add an image to `ship` so we no longer see a square.
 * To do this we need a `preload()` function after the variables, but before `setup()`.
@@ -373,8 +383,8 @@ function draw(){
 * Use `temp1` when adding an image to `ship`.
 
 ~~~
-var ship;
-var temp1;
+let ship;
+let temp1;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -400,8 +410,8 @@ function draw(){
 * 
 
 ~~~
-var ship;
-var temp1;
+let ship;
+let temp1;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -429,8 +439,8 @@ function draw(){
 * To see the collider, you need to turn on the debug mode with `ship.debug`.
 
 ~~~
-var ship;
-var temp1;
+let ship;
+let temp1;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -457,8 +467,8 @@ function draw(){
 * Adjust the width and the height to make sure the collider goes around the ship.
 
 ~~~
-var ship;
-var temp1;
+let ship;
+let temp1;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -488,8 +498,8 @@ function draw(){
 * All scales larger than 1 will make the sprite bigger.
 
 ~~~
-var ship;
-var temp1;
+let ship;
+let temp1;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -519,8 +529,8 @@ function draw(){
 * Put this new sprite into the variable `s`.
 
 ~~~
-var ship;
-var temp1;
+let ship;
+let temp1;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -536,8 +546,8 @@ function setup(){
   ship.debug = true;
   ship.scale = 0.7;
   
-  for(var i = 0; 0 < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; 0 < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   }
 }
 
@@ -553,8 +563,8 @@ function draw(){
 * `setSpeed` needs to know how fast to move and in which direction.
 
 ~~~
-var ship;
-var temp1;
+let ship;
+let temp1;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -570,8 +580,8 @@ function setup(){
   ship.debug = true;
   ship.scale = 0.7;
   
-  for(var i = 0; 0 < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; 0 < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   }
 }
@@ -591,9 +601,9 @@ function draw(){
 * Add each asteroid to the `asteroids` group.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
+let ship;
+let temp1;
+let asteroids;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -611,8 +621,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -628,7 +638,7 @@ function draw(){
 ###Bringing the Sprites Back
 * Notice how the asteroids leave the canvas and do not return.
 * In the `draw()` function make another for-loop.
-* The loop should run as long as `i` is less than the length of the array `allSprites` which contains all of the sprites on the canvas.
+* The loop should run as long as `i` is less than the length of the group `allSprites` which contains all of the sprites on the canvas.
 * Set the value of `s` to `allSprites[i]`.
 * Check to see if the `x` and `y` positions are on the canvas (conditional).
 * If yes, keep moving. If not, reset them to the opposite side of the canvas.
@@ -636,10 +646,10 @@ function draw(){
 * Make sure you use `width` and `height` plus `margin` so that the sprites are fully off the canvas before moving to the opposite side.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -657,8 +667,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -667,8 +677,8 @@ function setup(){
 function draw(){
   background(50);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -698,10 +708,10 @@ function draw(){
 * The bouncing action should move the ship, which should move to the opposite side when leaving the canvas.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship4.png");
@@ -719,8 +729,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -729,8 +739,8 @@ function setup(){
 function draw(){
   background(50);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -764,10 +774,10 @@ function draw(){
 * Change `loadImage` such that `"ship4.png"` becomes `"ship1.png"`.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -785,8 +795,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -795,8 +805,8 @@ function setup(){
 function draw(){
   background(50);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -830,10 +840,10 @@ function draw(){
 * If `friction` is too small it won't move in a pleasing way.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -853,8 +863,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -863,8 +873,8 @@ function setup(){
 function draw(){
   background(50);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -895,10 +905,10 @@ function draw(){
 * Use `textAlign(CENTER);` to make the text centered.
 * Use the `text("Controls: Arrow keys + x", width/2, 50);` command to add instructions to the top of the screen.
 
-~~~var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+~~~let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -918,8 +928,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -932,8 +942,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -965,10 +975,10 @@ function draw(){
 * Note, rotating to the left is a *negative* change.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -988,8 +998,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1002,8 +1012,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1038,10 +1048,10 @@ function draw(){
 * If yes, rotate the ship 4 degrees to the right.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1061,8 +1071,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1075,8 +1085,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1115,10 +1125,10 @@ function draw(){
 * In addition to moving, remember that the thrust animation should play.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1138,8 +1148,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1152,8 +1162,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1201,10 +1211,10 @@ function draw(){
 * `else` statements are skipped if the conditional is true.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1224,8 +1234,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1238,8 +1248,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1288,10 +1298,10 @@ function draw(){
 * Erase one of the numbers, and make the remaining number is 150.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1303,7 +1313,7 @@ function setup(){
   ship = createSprite(width/2, height/2);
   ship.addImage("normal", temp1);
   ship.addAnimation("thrust", "ship1.png", "ship4.png");
-  ship.setCollider("ellipse", 0, 0, 150);
+  ship.setCollider("circle", 0, 0, 150);
   ship.debug = true;
   ship.scale = 0.5;
   ship.maxSpeed = 6;
@@ -1311,8 +1321,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1325,8 +1335,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1372,11 +1382,11 @@ function draw(){
 * In `preload()` set the value of `temp2` to `loadImage("y_bullet.png")`.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1397,8 +1407,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1411,8 +1421,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1461,11 +1471,11 @@ function draw(){
 * Scale the bullet down to 30%.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1486,8 +1496,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1500,8 +1510,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1536,7 +1546,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
   }
@@ -1555,11 +1565,11 @@ function draw(){
 * Don't forget, we had to subtract 90 from the ship's rotation so it will flight straight. You must do the same thing for the bullets.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1580,8 +1590,8 @@ function setup(){
   
   asteroids = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1594,8 +1604,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1630,7 +1640,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
     b.setSpeed(10 + ship.getSpeed(), ship.rotation - 90);
@@ -1652,12 +1662,12 @@ function draw(){
 * Show difference between `keyDown` vs. `keyWentDown`.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
-var bullets;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
+let bullets;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1679,8 +1689,8 @@ function setup(){
   asteroids = new Group();
   bullets = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	let s = createSprite(random(0, width), random(0, height));
   	s.setSpeed(random(3, 5), random(0, 360));
   	asteroids.add(s);
   }
@@ -1693,8 +1703,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1729,7 +1739,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
     b.setSpeed(10 + ship.getSpeed(), ship.rotation - 90);
@@ -1754,12 +1764,12 @@ function draw(){
 * The computer does not know what `createAsteroid` is.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
-var bullets;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
+let bullets;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1781,13 +1791,13 @@ function setup(){
   asteroids = new Group();
   bullets = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	//var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	//let s = createSprite(random(0, width), random(0, height));
   	//s.setSpeed(random(3, 5), random(0, 360));
   	//asteroids.add(s);
   	
-  	var px = random(width);
-  	var py = random(height);
+  	let px = random(width);
+  	let py = random(height);
   	
   	createAsteroid(3, px, py);
   }
@@ -1800,8 +1810,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1836,7 +1846,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
     b.setSpeed(10 + ship.getSpeed(), ship.rotation - 90);
@@ -1868,12 +1878,12 @@ function draw(){
 * Turn on debug for asteroids.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
-var bullets;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
+let bullets;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -1895,13 +1905,13 @@ function setup(){
   asteroids = new Group();
   bullets = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	//var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	//let s = createSprite(random(0, width), random(0, height));
   	//s.setSpeed(random(3, 5), random(0, 360));
   	//asteroids.add(s);
   	
-  	var px = random(width);
-  	var py = random(height);
+  	let px = random(width);
+  	let py = random(height);
   	
   	createAsteroid(3, px, py);
   }
@@ -1914,8 +1924,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -1950,7 +1960,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
     b.setSpeed(10 + ship.getSpeed(), ship.rotation - 90);
@@ -1964,8 +1974,8 @@ function draw(){
 }
 
 function createAsteroid(type, x, y){
-  var a = createSprite(x, y);
-  var img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
+  let a = createSprite(x, y);
+  let img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
   a.addImage(img);
   a.setSpeed(2.5 - type/2, random(0, 360));
   a.rotationSpeed = random(-0.5, 0.5);
@@ -1983,12 +1993,12 @@ function createAsteroid(type, x, y){
 * Now lets test to see if `type` is equal to 3, 2, or 1. Scale the asteroids accordingly.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
-var bullets;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
+let bullets;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -2010,13 +2020,13 @@ function setup(){
   asteroids = new Group();
   bullets = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	//var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	//let s = createSprite(random(0, width), random(0, height));
   	//s.setSpeed(random(3, 5), random(0, 360));
   	//asteroids.add(s);
   	
-  	var px = random(width);
-  	var py = random(height);
+  	let px = random(width);
+  	let py = random(height);
   	
   	createAsteroid(3, px, py);
   }
@@ -2029,8 +2039,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -2065,7 +2075,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
     b.setSpeed(10 + ship.getSpeed(), ship.rotation - 90);
@@ -2079,8 +2089,8 @@ function draw(){
 }
 
 function createAsteroid(type, x, y){
-  var a = createSprite(x, y);
-  var img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
+  let a = createSprite(x, y);
+  let img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
   a.addImage(img);
   a.setSpeed(2.5 - type/2, random(0, 360));
   a.rotationSpeed = random(-0.5, 0.5);
@@ -2109,12 +2119,12 @@ function createAsteroid(type, x, y){
 * Things should look almost normal now.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
-var bullets;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
+let bullets;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -2136,13 +2146,13 @@ function setup(){
   asteroids = new Group();
   bullets = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	//var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	//let s = createSprite(random(0, width), random(0, height));
   	//s.setSpeed(random(3, 5), random(0, 360));
   	//asteroids.add(s);
   	
-  	var px = random(width);
-  	var py = random(height);
+  	let px = random(width);
+  	let py = random(height);
   	
   	createAsteroid(3, px, py);
   }
@@ -2155,8 +2165,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -2191,7 +2201,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
     b.setSpeed(10 + ship.getSpeed(), ship.rotation - 90);
@@ -2205,8 +2215,8 @@ function draw(){
 }
 
 function createAsteroid(type, x, y){
-  var a = createSprite(x, y);
-  var img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
+  let a = createSprite(x, y);
+  let img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
   a.addImage(img);
   a.setSpeed(2.5 - type/2, random(0, 360));
   a.rotationSpeed = random(-0.5, 0.5);
@@ -2243,12 +2253,12 @@ function createAsteroid(type, x, y){
 * Remove the original asteroid and the bullet.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
-var bullets;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
+let bullets;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -2270,13 +2280,13 @@ function setup(){
   asteroids = new Group();
   bullets = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	//var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	//let s = createSprite(random(0, width), random(0, height));
   	//s.setSpeed(random(3, 5), random(0, 360));
   	//asteroids.add(s);
   	
-  	var px = random(width);
-  	var py = random(height);
+  	let px = random(width);
+  	let py = random(height);
   	
   	createAsteroid(3, px, py);
   }
@@ -2289,8 +2299,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -2325,7 +2335,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
     b.setSpeed(10 + ship.getSpeed(), ship.rotation - 90);
@@ -2341,8 +2351,8 @@ function draw(){
 }
 
 function createAsteroid(type, x, y){
-  var a = createSprite(x, y);
-  var img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
+  let a = createSprite(x, y);
+  let img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
   a.addImage(img);
   a.setSpeed(2.5 - type/2, random(0, 360));
   a.rotationSpeed = random(-0.5, 0.5);
@@ -2367,7 +2377,7 @@ function createAsteroid(type, x, y){
 }
 
 function asteroidHit(asteroid, bullet){
-  var newType = asteroid.type - 1;
+  let newType = asteroid.type - 1;
   
   if(newType > 0){
     createAsteroid(newType, asteroid.position.x, asteroid.position.y);
@@ -2385,12 +2395,12 @@ function asteroidHit(asteroid, bullet){
 * Scale down the ship to 35%.
 
 ~~~
-var ship;
-var temp1;
-var asteroids;
-var margin = 40;
-var temp2;
-var bullets;
+let ship;
+let temp1;
+let asteroids;
+let margin = 40;
+let temp2;
+let bullets;
 
 function preload(){
 	temp1 = loadImage("ship1.png");
@@ -2412,13 +2422,13 @@ function setup(){
   asteroids = new Group();
   bullets = new Group();
   
-  for(var i = 0; i < 10; i++){
-  	//var s = createSprite(random(0, width), random(0, height));
+  for(let i = 0; i < 10; i++){
+  	//let s = createSprite(random(0, width), random(0, height));
   	//s.setSpeed(random(3, 5), random(0, 360));
   	//asteroids.add(s);
   	
-  	var px = random(width);
-  	var py = random(height);
+  	let px = random(width);
+  	let py = random(height);
   	
   	createAsteroid(3, px, py);
   }
@@ -2431,8 +2441,8 @@ function draw(){
   textAlign(CENTER);
   text("Controls: Arrow keys + x", width/2, 20);
 
-  for (var i = 0; i < allSprites.length; i++){
-    var s = allSprites[i];
+  for (let i = 0; i < allSprites.length; i++){
+    let s = allSprites[i];
     
     if (s.position.x > width + margin){
       s.position.x = -margin;
@@ -2467,7 +2477,7 @@ function draw(){
   }
   
   if(keyWentDown("x")){
-    var b = createSprite(ship.position.x, ship.position.y);
+    let b = createSprite(ship.position.x, ship.position.y);
     b.addImage(temp2);
     b.scale = 0.3;
     b.setSpeed(10 + ship.getSpeed(), ship.rotation - 90);
@@ -2483,8 +2493,8 @@ function draw(){
 }
 
 function createAsteroid(type, x, y){
-  var a = createSprite(x, y);
-  var img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
+  let a = createSprite(x, y);
+  let img = loadImage("asteroid" + floor(random(1, 5)) + ".png");
   a.addImage(img);
   a.setSpeed(2.5 - type/2, random(0, 360));
   a.rotationSpeed = random(-0.5, 0.5);
@@ -2509,7 +2519,7 @@ function createAsteroid(type, x, y){
 }
 
 function asteroidHit(asteroid, bullet){
-  var newType = asteroid.type - 1;
+  let newType = asteroid.type - 1;
   
   if(newType > 0){
     createAsteroid(newType, asteroid.position.x, asteroid.position.y);
