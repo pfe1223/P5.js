@@ -23,5 +23,18 @@ function writeAnswer(solution) {
 }
 
 function solveProblem(expr) {
+  let = operator = getOperator(expr);
+  let = coefficient = getMultiplier(expr);
+  let = result = getResult(expr);
+  let = constant = getConstant(expr);
 
+  if (operator === "+") {
+    result = result - constant;
+    result = result / coefficient;
+  } else {
+    result = result + constant;
+    result = result / coefficient;
+  }
+
+  return result;
 }
