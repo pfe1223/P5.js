@@ -140,3 +140,38 @@ ratioInfo.html("Ratio of points inside to outside: " + ratio);
 ~~~
 
 * Go ahead and test your program. You should the dots drawn to the canvas, as well as the information being updated on the right
+
+## Adding a Slider
+* We can replace the `input` and `button` elements with a `slider`
+* Add `slider` to your list of variables at the top of the program
+
+~~~
+let input, button, insideInfo, outsideInfo, ratioInfo, slider;
+~~~
+
+* In `setup` comment out the lines about the `input` and `button` elements
+* Create a slider
+  * One thing to think about is how responsive your program will be
+  * Having your slider go up to 1,000,000 is just too big
+  * Set the upper limit to something more reasonable, like 200,000
+  * Have the slider start at 0
+* Link the `makePoints` callback to the slider with the `.input` method
+
+~~~
+// input = createInput("Number of Points");
+// button = createButton("Go");
+// button.mousePressed(makePoints);
+slider = createSlider(0, 20000, 0);
+slider.input(makePoints);
+~~~
+
+* Go to the `makePoints` function
+* Notice how the variable `points` is dependent upon the `input` element; it no longer exists
+* Replace the `input` variable name with `slider`
+
+~~~
+let points = slider.value();
+~~~
+
+* Go ahead and test your code with the slider
+* Adjust the slider limits to add more points but still retain responsiveness

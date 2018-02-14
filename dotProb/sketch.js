@@ -1,11 +1,14 @@
 let input, button, insideInfo, outsideInfo, ratioInfo;
+let slider;
 
 function setup() {
   createCanvas(400, 400);
   createP('');
-  input = createInput("Number of Points");
-  button = createButton("Go");
-  button.mousePressed(makePoints);
+  // input = createInput("Number of Points");
+  // button = createButton("Go");
+  // button.mousePressed(makePoints);
+  slider = createSlider(0, 20000, 0);
+  slider.input(makePoints);
 
   background(0);
   stroke(150, 50, 150);
@@ -21,7 +24,7 @@ function setup() {
 function makePoints() {
   background(0);
 
-  let points = input.value();
+  let points = slider.value();
   let insideCircle = 0;
   let outsideCircle = 0;
   let radio = 0;
