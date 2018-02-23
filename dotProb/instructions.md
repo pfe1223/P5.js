@@ -58,14 +58,13 @@ function makePoints(){
 * We need three variables:
   * `points` which is the total number of points; this comes from the `input` field
   * `insideCircle` which is number of points inside the circle
-  * `outsideCircle` which is the number of points outside the circle
   * `ratio` which is the ratio of points inside the circle to points outside the circle
 
 ~~~
-var points = input.value();
-var insideCircle = 0;
-var outsideCircle = 0;
-var ratio = 0;
+let points = input.value();
+let insideCircle = 0;
+let outsideCircle = 0;
+let ratio = 0;
 ~~~
 
 * Next we want a loop that runs as many times as the number of points
@@ -93,7 +92,7 @@ for (let i = 0; i < points; i++) {
 
 ~~~
 outsideCircle = points - insideCircle;
-ratio = insideCircle / outsideCircle
+ratio = insideCircle / points * 4;
 ~~~
 
 * Since we do not want the green points to cover up the the circle on the canvas, we are going to redraw the same circle from the `setup` function

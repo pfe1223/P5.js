@@ -1,53 +1,52 @@
-let input, button, insideInfo, outsideInfo, ratioInfo;
-let slider;
+let input, button, insideInfo, ratioInfo, totalInfo, slider;
 
 function setup() {
   createCanvas(400, 400);
+  background(0);
   createP('');
-  // input = createInput("Number of Points");
-  // button = createButton("Go");
+  // input = createInput('Enter number of points');
+  // button = createButton('Go');
   // button.mousePressed(makePoints);
-  slider = createSlider(0, 20000, 0);
+  slider = createSlider(0, 1000, 0);
   slider.input(makePoints);
 
-  background(0);
+  insideInfo = createP('Points inside the circle: 0');
+  insideInfo.position(415, 0);
+  totalInfo = createP('Total points: 0');
+  totalInfo.position(415, 20);
+  ratioInfo = createP('Ratio of points inside: 0');
+  ratioInfo.position(415, 40);
+
   stroke(150, 50, 150);
   strokeWeight(3);
   noFill();
-  ellipse(width / 2, height / 2, width);
-
-  insideInfo = createP("Points inside the circle: 0").position(415, 0);
-  outsideInfo = createP("Points outside the circle: 0").position(415, 20);
-  ratioInfo = createP("Ratio of points inside to outside: 0").position(415, 40);
+  ellipse(width / 2, height / 2, width, height);
 }
 
 function makePoints() {
   background(0);
-
   let points = slider.value();
   let insideCircle = 0;
-  let outsideCircle = 0;
-  let radio = 0;
+  let ratio = 0;
 
   for (let i = 0; i < points; i++) {
-    strokeWeight(3);
     stroke(50, 150, 50);
     let x = random(width);
-    let y = random(height)
+    let y = random(height);
     point(x, y);
-    if (dist(x, y, width / 2, height / 2) < width / 2) {
+    if (dist(x, y, width / 2, height / 2) <= 200) {
       insideCircle++;
     }
   }
 
-  outsideCircle = points - insideCircle;
-  ratio = insideCircle / outsideCircle;
+  ratio = insideCircle / points * 4;
+
+  insideInfo.html('Points inside the circle: ' + insideCircle);
+  totalInfo.html('Total points: ' + points);
+  ratioInfo.html('Ratio of points inside: ' + ratio);
 
   stroke(150, 50, 150);
   strokeWeight(3);
-  ellipse(width / 2, height / 2, width);
-
-  insideInfo.html("Points inside the circle: " + insideCircle);
-  outsideInfo.html("Points outside the circle: " + outsideCircle);
-  ratioInfo.html("Ratio of points inside to outside: " + ratio);
+  noFill();
+  ellipse(width / 2, height / 2, width, height);
 }
