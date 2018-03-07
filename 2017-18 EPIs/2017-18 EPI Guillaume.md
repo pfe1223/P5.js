@@ -1,4 +1,4 @@
-# 2017-18 EPI Guillaume
+# 2017-18 8th Grade Coding EPI
 
 ## Objective
 Introduce students to the coordinate system and the basics of drawing with the P5 library in JavaScript. If time allows, perhaps students can animate their drawing as well.
@@ -110,3 +110,18 @@ triangle(50, 50, 350, 50, 200, 350);
 * The order of these four numbers is the x-position of the first point, the y-position of first point, the x-position of the second point, and the y-position of second point.
 
 ### Custom Shapes
+* You can make your shapes with the `beginShape()` and `endShape()` commands.
+* After use `beginShape()` then use the `vertex(x, y);` command, giving it an x and y-coordinates for each vertex.
+* End with the `closeShape(CLOSE);` command.
+* The `CLOSE` parameter will close the shape, drawing a line between the last vertex and the first one.
+* Place your vertex in either a clockwise or counterclockwise manner. If not, lines will be drawn across the shape instead of around the shape.
+* Here is an example of a custom shape:
+
+~~~
+beginShape()
+vertex(10, 10);
+vertex(40, 10);
+vertex(40, 40);
+vertex(10, 40);
+endShape(CLOSE);
+~~~
