@@ -88,11 +88,11 @@ function chat() {
 
 ~~~
 let bot = new RiveScript();
-bot.loadFile("brain.rive", brainReady, brainError);
+bot.loadFile("brain.txt", brainReady, brainError);
 ~~~
 
 * Both `brainReady` and `brainError` are functions; `brainReady` gets called if the file loads properly and `brainError` gets called if there is a problem
-* We need to define these two functions:
+* We need to define these two functions, and they should be defined inside the `setup` function:
 
 ~~~
 function brainReady() {
@@ -153,6 +153,8 @@ output.html(reply);
 * By giving multiple responses for the pattern, the computer will randomly choose among them
 
 ## Some Advanced Concepts
+You can see all of the features of the RiveScript library on their [documentation page](https://www.rivescript.com/docs/tutorial).
+
 ### Line Breaks
 If you want to give a very long reponse but want the response over several lines, you can use the `\n` character to make a new line
 
