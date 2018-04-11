@@ -1,11 +1,12 @@
 #Asteroids
 ## Getting the Game Template
-* Download the template for the game.
-* Find the zip file in your `Downloads` folder.
-* Double-click on the template.
-* Open `Atom`.
-* Click `File` and select `Open project folder`.
-* Find the game template in your `Downloads` folder and double-click it.
+* Go to the [P5 Web Editor](http://editor.p5js.org).
+* If you have an account, click `Log in` and enter your email and password.
+* If you don't have an account, click `Sign up` and make an account.
+	* Use your school email and a password you will remember
+* Open the [video game template](http://alpha.editor.p5js.org/patrick/sketches/r16CsGe5M).
+* Click `File` and then `Duplicate`.
+* Rename the document.
 
 ##Unit 1 - Sprites
 ###Creating a Ship Sprite
